@@ -1,0 +1,162 @@
+/* LandingPage.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #4caf50;       /* Green */
+  --secondary-color: #f5f5f5;      /* Light grey */
+  --text-color: #333;              /* Dark grey */
+  --bg-gradient: radial-gradient(circle at top right, #ffcc80, #ff8a65); /* Background gradient */
+  --button-login: #4caf50;         /* Green for login button */
+  --button-register: #ff5722;      /* Red for register button */
+  --button-delete: #e91e63;        /* Pink for delete button */
+  --button-update: #03a9f4;        /* Blue for update button */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+  max-width: 900px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in;
+  position: relative;
+}
+
+.landing-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.8s ease-out;
+}
+
+.landing-header p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+}
+
+.landing-image {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease-in-out;
+  animation: float 3s ease-in-out infinite;
+}
+
+.landing-image:hover {
+  transform: scale(1.05);
+}
+
+.landing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Button styling */
+.login-button, .register-btn, .delete-btn, .update-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button {
+  background-color: var(--button-login);
+}
+
+.register-btn {
+  background-color: var(--button-register);
+}
+
+.delete-btn {
+  background-color: var(--button-delete);
+}
+
+.update-button {
+  background-color: var(--button-update);
+}
+
+/* Hover effect on buttons */
+.login-button:hover { background-color: #388e3c; }
+.register-btn:hover { background-color: #d84315; }
+.delete-btn:hover { background-color: #c2185b; }
+.update-button:hover { background-color: #0288d1; }
+
+/* General button hover effect */
+.landing-button:hover, .register-btn:hover, .delete-btn:hover, .update-button:hover {
+  transform: scale(1.08);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive styling */
+@media (min-width: 768px) {
+  .landing-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .landing-image {
+    margin-bottom: 0;
+  }
+  
+  .landing-actions {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

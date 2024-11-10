@@ -9,7 +9,13 @@ const LandingPage = () => {
     <div className="landing-container">
       <header className="landing-header">
         <h1>Welcome to Your Personalized Recipe Generator</h1>
-        <p>Discover, create, and save recipes tailored just for you.</p>
+        <br>
+        </br>
+        <p>Discover & create recipes tailored just for you.</p>
+        <br>
+        </br>
+        <br>
+        </br>
       </header>
 
       <div className="landing-content">

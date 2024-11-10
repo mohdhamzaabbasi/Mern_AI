@@ -75,7 +75,7 @@ function ChatPage() {
   return (
     <div className="ChatPage">
       <div className="header">
-        <h2>Welcome, {username}</h2>
+        <h2>Welcome, {username} &nbsp;&nbsp; </h2>
         <button onClick={handleLogout}>Logout</button>
       </div>
       <div className="chat">

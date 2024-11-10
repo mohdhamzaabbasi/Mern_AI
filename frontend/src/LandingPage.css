@@ -1,162 +1,182 @@
 /* LandingPage.css */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --primary-color: #4caf50;       /* Green */
-  --secondary-color: #f5f5f5;      /* Light grey */
-  --text-color: #333;              /* Dark grey */
-  --bg-gradient: radial-gradient(circle at top right, #ffcc80, #ff8a65); /* Background gradient */
-  --button-login: #4caf50;         /* Green for login button */
-  --button-register: #ff5722;      /* Red for register button */
-  --button-delete: #e91e63;        /* Pink for delete button */
-  --button-update: #03a9f4;        /* Blue for update button */
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: var(--bg-gradient);
-  color: var(--text-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
+/* Overall container styling */
 .landing-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Header styling */
+.landing-header {
   text-align: center;
-  max-width: 900px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s ease-in;
-  position: relative;
+  margin-bottom: 2.5rem;
 }
 
 .landing-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: var(--primary-color);
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  animation: slideDown 0.8s ease-out;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.8s ease;
 }
 
 .landing-header p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: var(--text-color);
-  animation: fadeIn 1.5s ease-in-out;
+  font-size: 1.3rem;
+  color: #dcdcdc;
+  animation: fadeInUp 1.2s ease;
 }
 
+/* Content section styling */
 .landing-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  gap: 2rem;
   width: 100%;
-  max-width: 800px;
-  position: relative;
+  max-width: 1200px;
 }
 
+/* Image styling */
 .landing-image {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
-  transition: transform 0.3s ease-in-out;
-  animation: float 3s ease-in-out infinite;
+  width: 50%;
+  max-width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease;
 }
 
 .landing-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
 }
 
+/* Button container */
 .landing-actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeInUp 1s ease;
 }
 
 /* Button styling */
-.login-button, .register-btn, .delete-btn, .update-button {
-  padding: 12px 24px;
+button {
+  background: linear-gradient(90deg, #3949ab, #536dfb);
+  color: #ffffff;
   border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.2s;
-  position: relative;
-  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: background 0.4s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.login-button {
-  background-color: var(--button-login);
+button:hover {
+  background: linear-gradient(90deg, #536dfb, #3949ab);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
+button:active {
+  transform: translateY(-2px);
+}
+
+/* Specific button colors */
 .register-btn {
-  background-color: var(--button-register);
+  background: linear-gradient(90deg, #29b6f6, #4fc3f7);
+}
+
+.register-btn:hover {
+  background: linear-gradient(90deg, #4fc3f7, #29b6f6);
 }
 
 .delete-btn {
-  background-color: var(--button-delete);
+  background: linear-gradient(90deg, #e57373, #ef9a9a);
+}
+
+.delete-btn:hover {
+  background: linear-gradient(90deg, #ef9a9a, #e57373);
 }
 
 .update-button {
-  background-color: var(--button-update);
+  background: linear-gradient(90deg, #66bb6a, #81c784);
 }
 
-/* Hover effect on buttons */
-.login-button:hover { background-color: #388e3c; }
-.register-btn:hover { background-color: #d84315; }
-.delete-btn:hover { background-color: #c2185b; }
-.update-button:hover { background-color: #0288d1; }
+.update-button:hover {
+  background: linear-gradient(90deg, #81c784, #66bb6a);
+}
 
-/* General button hover effect */
-.landing-button:hover, .register-btn:hover, .delete-btn:hover, .update-button:hover {
-  transform: scale(1.08);
+/* Responsive design for larger displays */
+@media (min-width: 1200px) {
+  .landing-header h1 {
+    font-size: 4.5rem;
+  }
+
+  .landing-header p {
+    font-size: 1.6rem;
+  }
+
+  button {
+    font-size: 1.3rem;
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .landing-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .landing-image {
+    width: 80%;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.5rem;
+  }
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideDown {
-  0% { opacity: 0; transform: translateY(-30px); }
-  100% { opacity: 1; transform: translateY(0); }
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* Responsive styling */
-@media (min-width: 768px) {
-  .landing-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
   }
-  
-  .landing-image {
-    margin-bottom: 0;
-  }
-  
-  .landing-actions {
-    flex-direction: column;
-    gap: 20px;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

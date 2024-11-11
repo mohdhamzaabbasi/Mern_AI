@@ -87,11 +87,12 @@ router.get('/auth/messages', async (req, res) => {
 });
 
 
-const API_URL = 'http://192.168.1.35:5000/generate_recipe'; // Replace with your recipe API URL
+const API_URL = 'http://192.168.158.197:5000/generate_recipe'; // Replace with your recipe API URL
 
 router.post('/generate-recipe', async (req, res) => {
   try {
     console.log(req.body);
+    console.log("aaaaaaaaaaaaaaaaaaaaaaayyyyyyyyyyyyyyyyyyyaaaaaaaaaaaaaaaaaaa");
     // Sending POST request to the recipe API with ingredients
     const response = await axios.post(API_URL, req.body, {
       headers: {
@@ -103,7 +104,7 @@ router.post('/generate-recipe', async (req, res) => {
     res.json(response.data);
   } catch (error) {
     console.error('Error:', error.message);
-    res.status(500).send('Failed to generate recipe');
+    res.status(500).send('Failed to the generate recipe');
   }
 });
 

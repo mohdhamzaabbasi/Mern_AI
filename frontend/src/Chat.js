@@ -18,7 +18,7 @@ function ChatPage() {
       console.log(input);
       console.log("*****");
 
-      const reqq = await axios.post('http://localhost:5000/api/get-requests', {
+      const reqq = await axios.post('http://192.168.158.128:5000/api/get-requests', {
         username: username
       });
       let history="These are the past seraches of the user(seperated by comma), keep it in mind -->";
@@ -31,7 +31,7 @@ function ChatPage() {
       console.log(history);
       // Call the backend API to generate a recipe
       try {
-        const response = await axios.post('http://localhost:5000/api/generate-recipe', {
+        const response = await axios.post('http://192.168.158.128:5000/api/generate-recipe', {
           input_text: history,
         });
 
@@ -42,11 +42,13 @@ function ChatPage() {
 
         setMessages((prevMessages) => [...prevMessages, botMessage]);
       } catch (error) {
+        console.log("73328789");
+        console.log(error);
         const errorMessage = { sender: 'bot', text: 'Sorry, there was an error generating the recipe.' };
         setMessages((prevMessages) => [...prevMessages, errorMessage]);
       }
       try {
-        const response = await axios.post('http://localhost:5000/api/save-request', {
+        const response = await axios.post('http://192.168.158.128:5000/api/save-request', {
           username, // Sending username as part of the request body
           input,
         });

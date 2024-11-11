@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './Update.css'; // CSS file for styling
+import './Update.css'; 
 
 const Update = () => {
   const [username, setUsername] = useState('');
@@ -14,7 +14,7 @@ const Update = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/update-password', {
+      const response = await axios.post('http://192.168.158.128:5000/api/auth/update-password', {
         username,
         oldPassword,
         newPassword,
@@ -23,7 +23,7 @@ const Update = () => {
       if (response.status === 200) {
         setMessage('Password updated successfully.');
         setTimeout(() => {
-          navigate('/'); // Redirect to login or home after password update
+          navigate('/'); 
         }, 2000);
       } else {
         setMessage(response.data.message || 'Error updating password.');

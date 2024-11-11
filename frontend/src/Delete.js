@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './Delete.css'; // Ensure you create a CSS file for styles
+import './Delete.css';
 
 const Delete = () => {
   const [username, setUsername] = useState('');
@@ -13,7 +13,7 @@ const Delete = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/delete-account', {
+      const response = await axios.post('http://192.168.158.128:5000/api/auth/delete-account', {
         username,
         password,
       });
@@ -21,7 +21,7 @@ const Delete = () => {
       if (response.status === 200) {
         setMessage('Account deleted successfully.');
         setTimeout(() => {
-          navigate('/'); // Redirect to home or login page after account deletion
+          navigate('/'); 
         }, 2000);
       } else {
         setMessage(response.data.message || 'Error deleting account.');
